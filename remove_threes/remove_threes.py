@@ -15,4 +15,9 @@ def split_string(s):
 			substrings.append(substr)
 	return substrings[:-1]
 
-print(split_string('aaabbaabbbcca'))
+def remove_threes(s):
+	strings = split_string(s)
+	for string in strings:
+		if len(string) >= 3:
+			strings.remove(string)
+	return ''.join(strings)
