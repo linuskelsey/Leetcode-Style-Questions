@@ -1,17 +1,15 @@
-def remove_threes(s):
-	threes = True
+def split_string(s):
+	substrings=[]
+	L=len(s)
+	for i in range(L):
+	 	k=0
+	 	substr=''
+	 	while s[i] == s[i+k]:
+	 		substr += s[i+k]
+	 		k+=1
+	 	i += k
+	 	substrings.append(substr)
+	 	print(substrings)
+	return substrings
 
-	while threes:
-		L = len(s)
-		for i in range(L):
-			if s[i] == s[i+1]:
-				if s[i+1] == s[i+2]:
-					a = s[i]
-					s = s.replace(a, '', 3)
-					continue
-
-		threes = False
-
-	return s
-
-print(remove_threes('aaabbaabbbc'))
+print(split_string('aaabbaabbbc'))
